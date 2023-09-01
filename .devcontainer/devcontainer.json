@@ -1,0 +1,53 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/typescript-node
+{
+  "name": "t3stack-app",
+  // Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-18-bullseye",
+  "runArgs": ["--name=t3stack-app"],
+  "customizations": {
+    // Configure properties specific to VS Code.
+    "vscode": {
+      "settings": {
+        "editor.formatOnSave": true,
+        "files.autoSave": "onFocusChange",
+        "editor.formatOnSaveTimeout": 5000,
+        "files.eol": "\n",
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "/usr/bin/zsh"
+          }
+        },
+        "terminal.integrated.defaultProfile.linux": "zsh"
+      },
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "dsznajder.es7-react-js-snippets",
+        "formulahendry.auto-rename-tag",
+        "formulahendry.auto-close-tag",
+        "VisualStudioExptTeam.vscodeintellicode",
+        "xabikos.JavaScriptSnippets",
+        "vscode-icons-team.vscode-icons",
+        "ms-azuretools.vscode-docker",
+        "dbaeumer.vscode-eslint",
+        "ecmel.vscode-html-css",
+        "oderwat.indent-rainbow",
+        "TabNine.tabnine-vscode",
+        "42Crunch.vscode-openapi",
+        "Prisma.prisma",
+        "bradlc.vscode-tailwindcss"
+      ]
+    }
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/common-utils:2": {},
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {},
+    "ghcr.io/devcontainers-contrib/features/prisma:2": {},
+    "ghcr.io/eitsupi/devcontainer-features/jq-likes:1": {},
+    "ghcr.io/jungaretti/features/make:1": {},
+    "ghcr.io/devcontainers-contrib/features/zsh-plugins:0": {
+      "plugins": "debian docker git node npm vscode zsh-syntax-highlighting zsh-autosuggestions",
+      "omzPlugins": "https://github.com/zsh-users/zsh-autosuggestions https://github.com/zsh-users/zsh-syntax-highlighting"
+    }
+  }
+}
